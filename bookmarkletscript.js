@@ -87,6 +87,8 @@ class WordleSolver{
     }
 }
 
+console.log("running");
+
 var solver = new WordleSolver();
 var pattern = new Pattern();
 
