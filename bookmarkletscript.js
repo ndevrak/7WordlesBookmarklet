@@ -115,4 +115,6 @@ for (var j=0; j< a.length; j++){
     console.log(guess+data);
     pattern.decodeGuess(guess+data);
 }
+console.log(pattern.knownLetters);
+console.log(pattern.notLetters);
 console.log(solver.possibleWords1(pattern));
