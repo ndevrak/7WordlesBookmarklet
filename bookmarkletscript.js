@@ -91,11 +91,12 @@ var solver = new WordleSolver();
 var pattern = new Pattern();
 
 var a = document.getElementsByClassName("Row-locked-in"); 
-
+console.log(a.length);
 for (var i=0; i< a.length; i++){
     var row = a[a.length-1];
     var guess = "";
     var data = "";
+    console.log(guess + data);
     for(var i = 0; i<5; i++){
         guess += row.childNodes[i].innerHTML;
         var b = (row.childNodes[i].classList[1]);
@@ -112,4 +113,4 @@ for (var i=0; i< a.length; i++){
     console.log(guess+data);
     pattern.decodeGuess(guess+data);
 }
-console.log(solver.possibleWords1(pattern));
+//console.log(solver.possibleWords1(pattern));
