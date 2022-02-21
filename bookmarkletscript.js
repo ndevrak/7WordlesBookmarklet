@@ -92,20 +92,23 @@ var pattern = new Pattern();
 
 var a = document.getElementsByClassName("Row-locked-in"); 
 
-var row = a[a.length-1];
-var guess = "";
-var data = "";
-for(var i = 0; i<5; i++){
-    guess += row.childNodes[i].innerHTML;
-    var b = (row.childNodes[i].classList[1]);
-    if (b == "letter-absent"){
-        data += "."
+for (var i=0; i< a.length; i++){
+    var row = a[a.length-1];
+    var guess = "";
+    var data = "";
+    for(var i = 0; i<5; i++){
+        guess += row.childNodes[i].innerHTML;
+        var b = (row.childNodes[i].classList[1]);
+        if (b == "letter-absent"){
+            data += "."
+        }
+        else if (b == "letter-elsewhere"){
+            data += "?"
+        }
+        else if (b == "letter-correct"){
+            data += "!"
+        }
     }
-    else if (b == "letter-elsewhere"){
-        data += "?"
-    }
-    else if (b == "letter-correct"){
-        data += "!"
-    }
+    pattern.decodeGuess(guess+data)
 }
-console.log(guess + data);
+console.log(solver.possibleWords1(pattern))
