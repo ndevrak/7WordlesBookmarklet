@@ -92,7 +92,7 @@ var pattern = new Pattern();
 
 function getInputValue() {
     // Selecting the input element and get its value 
-    let inputVal = document.getElementById("guess1ID").value;
+    let inputVal = document.getElementById("guess1ID").value.toUpperCase();
     // Displaying the value
     
     pattern.decodeGuess(inputVal);
