@@ -100,15 +100,16 @@ for (var i=0; i< a.length; i++){
         guess += row.childNodes[i].innerHTML;
         var b = (row.childNodes[i].classList[1]);
         if (b == "letter-absent"){
-            data += "."
+            data += ".";
         }
         else if (b == "letter-elsewhere"){
-            data += "?"
+            data += "?";
         }
         else if (b == "letter-correct"){
-            data += "!"
+            data += "!";
         }
     }
-    pattern.decodeGuess(guess+data)
+    console.log(guess+data);
+    pattern.decodeGuess(guess+data);
 }
-console.log(solver.possibleWords1(pattern))
+console.log(solver.possibleWords1(pattern));

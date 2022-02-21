@@ -1,1 +1,1 @@
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawcdn.githack.com/ndevrak/7WordlesBookmarklet/b05cebca59e41a4db4ebd4a244034638e71ee674/bookmarkletscript.js' })();
+javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://raw.githack.com/ndevrak/7WordlesBookmarklet/main/bookmarkletscript.js' })();
