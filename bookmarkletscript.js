@@ -94,8 +94,8 @@ var pattern = new Pattern();
 
 var a = document.getElementsByClassName("Row-locked-in"); 
 console.log(a.length);
-for (var i=0; i< a.length; i++){
-    var row = a[a.length-1];
+for (var j=0; j< a.length; j++){
+    var row = a[j];
     var guess = "";
     var data = "";
     console.log(guess + data);
@@ -115,4 +115,4 @@ for (var i=0; i< a.length; i++){
     console.log(guess+data);
     pattern.decodeGuess(guess+data);
 }
-//console.log(solver.possibleWords1(pattern));
+console.log(solver.possibleWords1(pattern));
