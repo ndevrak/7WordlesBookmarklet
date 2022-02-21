@@ -112,9 +112,11 @@ for (var j=0; j< a.length; j++){
             data += "!";
         }
     }
+    guess = guess.toUpperCase();
     console.log(guess+data);
     pattern.decodeGuess(guess+data);
 }
 console.log(pattern.knownLetters);
 console.log(pattern.notLetters);
+console.log(solver.checkWord("MOUNT", pattern));
 console.log(solver.possibleWords1(pattern));
