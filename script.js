@@ -97,7 +97,7 @@ function getInputValue() {
     
     pattern.decodeGuess(inputVal);
     words = solver.possibleWords1(pattern);
-    alert(words)
+    //alert(words)
 
     var node = document.getElementById('node-id');
     var newNode = document.createElement('p');
