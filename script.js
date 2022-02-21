@@ -89,15 +89,32 @@ class WordleSolver{
 
 var solver = new WordleSolver();
 var pattern = new Pattern();
+
 function getInputValue() {
     // Selecting the input element and get its value 
-    let inputVal = document.getElementById("inputId").value;
+    let inputVal = document.getElementById("guess1ID").value;
     // Displaying the value
-    //document.write(inputVal);
-    pattern.decodeGuess(inputVal)
-    alert(solver.possibleWords1(pattern))
+    
+    pattern.decodeGuess(inputVal);
+    words = solver.possibleWords1(pattern);
+    alert(words)
+
+    var node = document.getElementById('node-id');
+    var newNode = document.createElement('p');
+    displayStr = '' + inputVal.slice(0,5) + '          ';
+    if(words.length < 5){
+        displayStr += words;
+    }
+    else{
+        displayStr += words.slice(0,5);
+        displayStr += " and " + (words.length-5) + " others.";
+    }
+    newNode.appendChild(document.createTextNode(displayStr));
+    node.appendChild(newNode);
 }
 
 function resetPattern(){
     pattern.resetPattern()
+    var node = document.getElementById('node-id');
+    node.textContent = '';
 }
