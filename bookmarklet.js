@@ -2,5 +2,5 @@ javascript:(function(){document.body.appendChild(document.createElement('script'
 
 javascript:(function(){
     document.body.appendChild(document.createElement('script')).src='
-    https://rawcdn.githack.com/ndevrak/7WordlesBookmarklet/214404f2233c3a235c1f03b8fb029149c56bce34/bookmarkletscript.js
+    https://rawcdn.githack.com/ndevrak/7WordlesBookmarklet/ac7a1a06522da929b8c6d85079a99454c53c549e/bookmarkletscript.js
 ' })();

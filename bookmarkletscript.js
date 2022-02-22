@@ -112,7 +112,7 @@ function readGameData(pattern){
     }
 }
 
-function create(htmlStr) {
+function addHTML(htmlStr) {
     var frag = document.createDocumentFragment(),
         temp = document.createElement('div');
     temp.innerHTML = htmlStr;
@@ -122,7 +122,13 @@ function create(htmlStr) {
     return frag;
 }
 
-var fragment = create('<div>Hello!</div><p>...</p>');
+function bestMove(solver, patter){
+    readGameData(pattern);
+    console.log(solver.possibleWords1(pattern));
+    pattern.resetPattern();
+}
+
+var fragment = addHTML('<div><button type="button" onclick="bestMove(solver, pattern);">Get Value</button></div>');
 // You can use native DOM methods to insert the fragment:
 document.body.insertBefore(fragment, document.body.childNodes[0]);
 
@@ -130,5 +136,3 @@ console.log("running");
 
 var solver = new WordleSolver();
 var pattern = new Pattern();
-
-console.log(solver.possibleWords1(pattern));
