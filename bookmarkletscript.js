@@ -87,36 +87,39 @@ class WordleSolver{
     }
 }
 
+function readGameData(pattern){
+    var a = document.getElementsByClassName("Row-locked-in"); 
+    for (var j=0; j< a.length; j++){
+        var row = a[j];
+        var guess = "";
+        var data = "";
+        console.log(guess + data);
+        for(var i = 0; i<5; i++){
+            guess += row.childNodes[i].innerHTML;
+            var b = (row.childNodes[i].classList[1]);
+            if (b == "letter-absent"){
+                data += ".";
+            }
+            else if (b == "letter-elsewhere"){
+                data += "?";
+            }
+            else if (b == "letter-correct"){
+                data += "!";
+            }
+        }
+        guess = guess.toUpperCase();
+        pattern.decodeGuess(guess+data);
+    }
+}
+
 console.log("running");
 
 var solver = new WordleSolver();
 var pattern = new Pattern();
 
-var a = document.getElementsByClassName("Row-locked-in"); 
-console.log(a.length);
-for (var j=0; j< a.length; j++){
-    var row = a[j];
-    var guess = "";
-    var data = "";
-    console.log(guess + data);
-    for(var i = 0; i<5; i++){
-        guess += row.childNodes[i].innerHTML;
-        var b = (row.childNodes[i].classList[1]);
-        if (b == "letter-absent"){
-            data += ".";
-        }
-        else if (b == "letter-elsewhere"){
-            data += "?";
-        }
-        else if (b == "letter-correct"){
-            data += "!";
-        }
-    }
-    guess = guess.toUpperCase();
-    console.log(guess+data);
-    pattern.decodeGuess(guess+data);
-}
-console.log(pattern.knownLetters);
-console.log(pattern.notLetters);
-console.log(solver.checkWord("MOUNT", pattern));
+var frag = document.createDocumentFragment();
+var temp = document.createElement('div');
+temp.innerHTML = '<button type="button" onclick="getBestMove();">Get Value</button>'
+document.body.insertBefore(fragment, document.body.childNodes[0]);
+
 console.log(solver.possibleWords1(pattern));
